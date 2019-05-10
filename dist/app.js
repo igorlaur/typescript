@@ -1,0 +1,10 @@
+var message = "Igor Laur";
+console.log(message);
+var episode = 4;
+console.log("This is episode " + 4);
+episode = episode + 1;
+console.log("Next episode is " + episode);
+var favoriteCar;
+favoriteCar = 'Mustang';
+favoriteCar = 10;
+console.log("My favorite car is " + favoriteCar);

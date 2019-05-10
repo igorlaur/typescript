@@ -1,0 +1,8 @@
+{
+	"compilerOptions": {
+		"outDir": "dist",
+		"noEmitOnError": true
+	}
+} 
+// Criar pasta dist passando o app.js tudo que eu alterar em TS
+// Não emitir mais erro quando está no arquivo typescript quando eu passar algo que não seja correspondente, caso esteja verdadeiro
