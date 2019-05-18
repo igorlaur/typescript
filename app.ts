@@ -1,31 +1,38 @@
-let message: string = "Igor Laur"
-console.log(message)
+class Spacecraft {
+    constructor (public propulsor: string){}
 
-let episode: number = 4
-console.log("This is episode " + 4)
-episode = episode + 1
-console.log("Next episode is " + episode)
-
-let favoriteCar: string // posso tirar string, porém ele não me mostrará onde está o erro e passará o último valor por cima
-favoriteCar = 'Mustang'
-// favoriteCar = 11
-console.log("My favorite car is " + favoriteCar)
-
-
-let isEnoughToBeatMF = function (parsecs: number): boolean {
-    return parsecs < 12
-}
-let distance = 14
-console.log(`Is ${distance} to go to the other world? ${isEnoughToBeatMF(distance) ? 'YES': 'NO'} `)
-
-// Arrow function
-let call = (name: string) => console.log(`Do you copy, ${name}`)
-call('R2')
-// End
-
-function inc (speed: number, inc: number = 1) : number {
-    return speed + inc
+    jumpIntoHyperspace() {
+        console.log(`Entering hyperspace with ${this.propulsor}`)
+    }
 }
 
-console.log(`inc (5, 1) = ${inc(5, 1)}`)
-console.log(`inc (5) = ${inc(5)}`)
+let ship = new Spacecraft('hyperdrive')
+ship.jumpIntoHyperspace()
+
+class MillenniumFalcon extends Spacecraft implements Containership{
+
+    cargoContainers: number
+
+    constructor(){
+        super('hyperdrive')
+        this.cargoContainers = 4
+    }
+
+    jumpIntoHyperspace(){
+        if(Math.random() >= 0.5){
+            super.jumpIntoHyperspace()
+        } else {
+            console.log('Failed to jump into hyperspace')
+        }
+    }
+}
+
+let falcon = new MillenniumFalcon()
+falcon.jumpIntoHyperspace()
+
+interface Containership {
+    cargoContainers: number
+}
+
+let goodForTheJob = (ship: Containership) => ship.cargoContainers > 2
+console.log(`Is falcon good for the job? ${goodForTheJob(falcon) ? 'yes' : 'no'} `)
