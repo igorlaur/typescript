@@ -1,7 +1,10 @@
 {
 	"compilerOptions": {
 		"outDir": "dist",
-		"noEmitOnError": true
+		"noEmitOnError": true,
+		"typeRoots": [
+			"node_modules/@types"
+		]
 	}
 } 
 // Criar pasta dist passando o app.js tudo que eu alterar em TS
